@@ -3,7 +3,7 @@
        "module": "CommonJS",
        "target": "es2017",
        "experimentalDecorators": true,
-       "emitDecoratorMetadata": true
+       "emitDecoratorMetadata": true,
 }
 
 }
