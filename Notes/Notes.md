@@ -80,3 +80,40 @@ install @nestjs/typeorm and typeorm with database package you want to use.
 [1]-Establish the Connection 
 Import "Typeorm" from @nestjs/common, add it to providers of main project and write credentials in the object
 
+[2]- Create the Entity
+
+- Create Entity with Entity, Column and Primary Generated Key.
+- Connect the entity with its parent module. Add in imports array with TypeormModule.forFeature([ Repository ])
+- Connect the entity with its root module in entities array.
+
+
+## Synchronization Flag in TYPEORM
+
+The synchronization flag allows the NEST to run migrations as we change our Repository
+
+## Difference between Create and Save in Typeorm ?
+
+repo.create() -> creates the instance of the repo and does the class validations (sync), Hooks are not executed
+
+repo.save() -> saves the instance of the repo in the database (async)
+
+
+## Hooks in TypeORM
+
+Hooks are executed in typeorm only if we create and insatance and use .save() or .remove() methods
+
+1- AfterInsert
+2- AfterUpdate
+3- AfterDelete
+
+## Difference between findOne and find
+
+i- Find One returns a single object or null
+
+ii- Find returns an array of objects or an empty array
+
+## Excluders in TypeORM 
+
+We can use @Exclude from class-transformer to exclude a particular column in TypeORM
+
+We also need to UseInterceptor and ClassSerializerInterceptor decorators above the request type in the controller
